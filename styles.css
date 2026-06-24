@@ -38,12 +38,12 @@ button {
 }
 
 .shell {
-  width: min(1120px, calc(100% - 28px));
+  width: min(1480px, calc(100% - 48px));
   min-height: 100vh;
   margin: 0 auto;
   display: grid;
   place-items: center;
-  padding: 28px 0;
+  padding: 48px 0;
 }
 
 .game-panel {
@@ -195,21 +195,21 @@ h2 {
 }
 .stage {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 170px minmax(0, 1fr);
   grid-template-areas:
     "timer prompt"
     "timer answer"
     "timer actions";
   gap: 18px 26px;
   align-items: center;
-  padding: 32px 24px;
+  padding: 40px 24px 48px;
 }
 
 .timer {
   grid-area: timer;
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
 }
 
 .timer svg {
@@ -247,7 +247,7 @@ h2 {
 
 .prompt-card {
   grid-area: prompt;
-  min-height: 210px;
+  min-height: clamp(230px, 26vh, 340px);
   display: grid;
   place-items: center;
   text-align: center;
@@ -262,7 +262,7 @@ h2 {
 }
 
 .prompt {
-  font-size: clamp(4rem, 15vw, 8.5rem);
+  font-size: clamp(5rem, 12vw, 11rem);
   line-height: 0.95;
   font-weight: 900;
 }
