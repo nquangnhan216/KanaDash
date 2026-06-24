@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kana Dash</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="game-panel" aria-label="Kana Dash game">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Kana Dash</p>
+            <h1>Japanese kana speed quiz</h1>
+          </div>
+          <div class="score-strip" aria-live="polite">
+            <span><strong id="score">0</strong> score</span>
+            <span><strong id="streak">0</strong> streak</span>
+            <span><strong id="lives">3</strong> lives</span>
+          </div>
+        </header>
+
+        <section class="controls" aria-label="Game setup">
+          <div class="control-group">
+            <span class="control-label">Script</span>
+            <div class="segmented" role="radiogroup" aria-label="Kana script">
+              <button class="seg active" data-script="hiragana" type="button" aria-pressed="true">Hiragana</button>
+              <button class="seg" data-script="katakana" type="button" aria-pressed="false">Katakana</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <span class="control-label">Question</span>
+            <div class="segmented wide" role="radiogroup" aria-label="Question type">
+              <button class="seg active" data-flow="kana-to-romaji" type="button" aria-pressed="true">Kana to romaji</button>
+              <button class="seg" data-flow="romaji-to-kana" type="button" aria-pressed="false">Romaji to kana</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <span class="control-label">Difficulty</span>
+            <div class="segmented" role="radiogroup" aria-label="Difficulty">
+              <button class="seg active" data-difficulty="easy" type="button" aria-pressed="true">Easy</button>
+              <button class="seg" data-difficulty="normal" type="button" aria-pressed="false">Normal</button>
+              <button class="seg" data-difficulty="hard" type="button" aria-pressed="false">Hard</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="row-controls" aria-label="Kana rows">
+          <div class="row-header">
+            <span class="control-label">Rows</span>
+          </div>
+          <div class="row-picker" role="group" aria-label="Rows to practice">
+            <button class="row-chip active" data-row="all" type="button" aria-pressed="true">All</button>
+            <button class="row-chip active" data-row="vowel" type="button" aria-pressed="true">A</button>
+            <button class="row-chip active" data-row="k" type="button" aria-pressed="true">K</button>
+            <button class="row-chip active" data-row="s" type="button" aria-pressed="true">S</button>
+            <button class="row-chip active" data-row="t" type="button" aria-pressed="true">T</button>
+            <button class="row-chip active" data-row="n" type="button" aria-pressed="true">N</button>
+            <button class="row-chip active" data-row="h" type="button" aria-pressed="true">H</button>
+            <button class="row-chip active" data-row="m" type="button" aria-pressed="true">M</button>
+            <button class="row-chip active" data-row="y" type="button" aria-pressed="true">Y</button>
+            <button class="row-chip active" data-row="r" type="button" aria-pressed="true">R</button>
+            <button class="row-chip active" data-row="w" type="button" aria-pressed="true">W/N</button>
+          </div>
+        </section>
+        <section class="stage" aria-live="polite">
+          <div class="timer" aria-label="Time left">
+            <svg viewBox="0 0 120 120" role="img" aria-hidden="true">
+              <circle class="timer-bg" cx="60" cy="60" r="52"></circle>
+              <circle class="timer-ring" id="timerRing" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <span id="timeLeft">10</span>
+          </div>
+
+          <div class="prompt-card">
+            <p id="promptLabel" class="prompt-label">Pick your settings, then answer.</p>
+            <div id="prompt" class="prompt">あ</div>
+            <p id="feedback" class="feedback">Ready when you are.</p>
+          </div>
+
+          <div id="typedAnswer" class="answer-row">
+            <input id="romajiInput" type="text" inputmode="latin" autocomplete="off" spellcheck="false" placeholder="Type romaji">
+            <button id="submitAnswer" class="primary" type="button">Submit</button>
+          </div>
+
+          <div id="choiceGrid" class="choice-grid hidden" aria-label="Kana choices"></div>
+          <div id="roundActions" class="round-actions hidden">
+            <button id="forfeitGame" class="forfeit" type="button">Forfeit</button>
+          </div>
+        </section>
+
+        <section id="results" class="results hidden" aria-live="polite">
+          <div>
+            <p class="eyebrow">Round complete</p>
+            <h2 id="resultTitle">Nice run</h2>
+          </div>
+          <div class="result-stats">
+            <span><strong id="finalScore">0</strong> score</span>
+            <span><strong id="accuracy">0%</strong> accuracy</span>
+            <span><strong id="answered">0</strong> answered</span>
+          </div>
+          <div>
+            <p class="practice-title">Practice next</p>
+            <div id="practiceList" class="practice-list"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
