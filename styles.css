@@ -38,12 +38,12 @@ button {
 }
 
 .shell {
-  width: min(1480px, calc(100% - 48px));
+  width: min(1680px, calc(100% - 72px));
   min-height: 100vh;
   margin: 0 auto;
   display: grid;
   place-items: center;
-  padding: 48px 0;
+  padding: 36px 0;
 }
 
 .game-panel {
@@ -60,7 +60,7 @@ button {
   justify-content: space-between;
   gap: 20px;
   align-items: center;
-  padding: 24px;
+  padding: 30px 32px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -121,7 +121,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1.35fr 1fr;
   gap: 16px;
-  padding: 18px 24px;
+  padding: 20px 32px;
   border-bottom: 1px solid var(--line);
   background: #fbfcff;
 }
@@ -163,7 +163,7 @@ h2 {
   grid-template-columns: 120px minmax(0, 1fr);
   gap: 12px;
   align-items: center;
-  padding: 14px 24px;
+  padding: 16px 32px;
   border-bottom: 1px solid var(--line);
   background: #ffffff;
 }
@@ -195,21 +195,21 @@ h2 {
 }
 .stage {
   display: grid;
-  grid-template-columns: 170px minmax(0, 1fr);
+  grid-template-columns: 220px minmax(0, 1fr);
   grid-template-areas:
     "timer prompt"
     "timer answer"
     "timer actions";
-  gap: 18px 26px;
+  gap: 22px 36px;
   align-items: center;
-  padding: 40px 24px 48px;
+  padding: 58px 32px 72px;
 }
 
 .timer {
   grid-area: timer;
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 190px;
+  height: 190px;
 }
 
 .timer svg {
@@ -241,13 +241,13 @@ h2 {
   inset: 0;
   display: grid;
   place-items: center;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 900;
 }
 
 .prompt-card {
   grid-area: prompt;
-  min-height: clamp(230px, 26vh, 340px);
+  min-height: clamp(330px, 40vh, 500px);
   display: grid;
   place-items: center;
   text-align: center;
@@ -262,7 +262,7 @@ h2 {
 }
 
 .prompt {
-  font-size: clamp(5rem, 12vw, 11rem);
+  font-size: clamp(8rem, 14vw, 16rem);
   line-height: 0.95;
   font-weight: 900;
 }
@@ -291,13 +291,13 @@ h2 {
 
 input {
   width: 100%;
-  min-height: 52px;
+  min-height: 64px;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0 16px;
   color: var(--ink);
   background: #ffffff;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   outline: none;
 }
 
@@ -308,10 +308,10 @@ input:focus {
 
 .primary,
 .forfeit {
-  min-height: 52px;
+  min-height: 64px;
   border: 0;
   border-radius: 8px;
-  padding: 0 18px;
+  padding: 0 24px;
   color: #ffffff;
   background: var(--blue);
   font-weight: 900;
@@ -348,7 +348,7 @@ input:focus {
   border-radius: 8px;
   background: #ffffff;
   color: var(--ink);
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 900;
 }
 
@@ -362,7 +362,7 @@ input:focus {
 .results {
   display: grid;
   gap: 16px;
-  padding: 24px;
+  padding: 30px 32px;
   border-top: 1px solid var(--line);
   background: #fbfcff;
 }
