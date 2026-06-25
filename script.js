@@ -358,7 +358,7 @@ function handleAnswer(isCorrect, emptyMessage = "") {
     state.streak = 0;
     state.lives -= 1;
     addMiss(state.current);
-    el.feedback.textContent = `It was ${state.current.romaji}.`;
+    el.feedback.textContent = getCorrectAnswerText();
     el.feedback.className = "feedback bad";
   }
 
@@ -370,6 +370,16 @@ function handleAnswer(isCorrect, emptyMessage = "") {
   }
 
   setTimeout(nextQuestion, isCorrect ? 450 : 950);
+}
+
+function getCorrectAnswerText() {
+  const symbol = state.current[state.script];
+
+  if (state.flow === "romaji-to-kana") {
+    return `It was ${symbol} (${state.current.romaji}).`;
+  }
+
+  return `It was ${symbol} = ${state.current.romaji}.`;
 }
 
 function addMiss(item) {
