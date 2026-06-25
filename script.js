@@ -379,7 +379,7 @@ function getCorrectAnswerText() {
     return `It was ${symbol} (${state.current.romaji}).`;
   }
 
-  return `It was ${symbol} = ${state.current.romaji}.`;
+  return `It was ${symbol} (${state.current.romaji}).`;
 }
 
 function addMiss(item) {
