@@ -102,6 +102,7 @@ const el = {
   lives: document.querySelector("#lives"),
   timeLeft: document.querySelector("#timeLeft"),
   timerRing: document.querySelector("#timerRing"),
+  themeToggle: document.querySelector("#themeToggle"),
   promptLabel: document.querySelector("#promptLabel"),
   prompt: document.querySelector("#prompt"),
   feedback: document.querySelector("#feedback"),
