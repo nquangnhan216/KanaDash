@@ -186,6 +186,7 @@ document.querySelectorAll("[data-row]").forEach((button) => {
     previewPrompt();
   });
 });
+el.themeToggle.addEventListener("click", toggleTheme);
 el.forfeitGame.addEventListener("click", forfeitRound);
 el.submitAnswer.addEventListener("click", submitTypedAnswer);
 el.romajiInput.addEventListener("keydown", (event) => {
@@ -194,12 +195,32 @@ el.romajiInput.addEventListener("keydown", (event) => {
   }
 });
 
+updateThemeButton();
 updateRowButtons();
 previewPrompt();
 updateInputMode();
 updateHud();
 updateTimer();
 
+function getActiveTheme() {
+  return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+}
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("kanaDashTheme", theme);
+  updateThemeButton();
+}
+
+function toggleTheme() {
+  setTheme(getActiveTheme() === "dark" ? "light" : "dark");
+}
+
+function updateThemeButton() {
+  const isDark = getActiveTheme() === "dark";
+  el.themeToggle.textContent = isDark ? "Light" : "Dark";
+  el.themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+}
 function setActive(selector, activeButton) {
   document.querySelectorAll(selector).forEach((button) => {
     const isActive = button === activeButton;

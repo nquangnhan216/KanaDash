@@ -4,6 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kana Dash</title>
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("kanaDashTheme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -14,10 +21,13 @@
             <p class="eyebrow">Kana Dash</p>
             <h1>Japanese kana speed quiz</h1>
           </div>
-          <div class="score-strip" aria-live="polite">
-            <span><strong id="score">0</strong> score</span>
-            <span><strong id="streak">0</strong> streak</span>
-            <span><strong id="lives">3</strong> lives</span>
+          <div class="topbar-actions">
+            <div class="score-strip" aria-live="polite">
+              <span><strong id="score">0</strong> score</span>
+              <span><strong id="streak">0</strong> streak</span>
+              <span><strong id="lives">3</strong> lives</span>
+            </div>
+            <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">Dark</button>
           </div>
         </header>
 
