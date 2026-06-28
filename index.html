@@ -22,10 +22,10 @@
             <h1>Japanese kana speed quiz</h1>
           </div>
           <div class="topbar-actions">
-            <div class="score-strip" aria-live="polite">
-              <span><strong id="score">0</strong> score</span>
-              <span><strong id="streak">0</strong> streak</span>
-              <span><strong id="lives">3</strong> lives</span>
+            <div class="daily-stats" aria-live="polite">
+              <span><strong id="dailyProgress">0/10</strong> done</span>
+              <span><strong id="dailyStreak">0</strong> day streak</span>
+              <span><strong id="dailyBest">0</strong> best</span>
             </div>
             <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">Dark</button>
           </div>
@@ -74,6 +74,17 @@
             <button class="row-chip active" data-row="y" type="button" aria-pressed="true">Y</button>
             <button class="row-chip active" data-row="r" type="button" aria-pressed="true">R</button>
             <button class="row-chip active" data-row="w" type="button" aria-pressed="true">W/N</button>
+          </div>
+        </section>
+
+        <section class="daily-panel" aria-label="Current round">
+          <div>
+            <span class="control-label">Current</span>
+            <p id="dailyStatus" class="daily-status">Answer 10 questions to complete today's practice.</p>
+          </div>
+          <div class="score-strip" aria-live="polite">
+            <span><strong id="score">0</strong> score</span>
+            <span><strong id="lives">3</strong> lives</span>
           </div>
         </section>
         <section class="stage" aria-live="polite">
